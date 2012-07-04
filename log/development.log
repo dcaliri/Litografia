@@ -1,0 +1,309 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-06-29 23:20:07 -0300
+Served asset /rails.png - 304 Not Modified (30ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2012-06-29 23:20:10 -0300
+Processing by Rails::InfoController#properties as */*
+  Rendered inline template (43.0ms)
+Completed 200 OK in 189ms (Views: 188.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (11.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateClientes (20120628040454)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente" varchar(255), "porcentajeMaximo" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120628040454')
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOts (20120630023558)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "ots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "estado" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630023558')
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("clientes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("ots")[0m
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateClientes (20120628040454)
+Migrating to CreateOts (20120630023558)
+Migrating to CreateEntregas (20120630025934)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "entregas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cantidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630025934')[0m
+  [1m[35m (50.0ms)[0m  commit transaction
+Migrating to CreateMobras (20120630031555)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "mobras" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "trabajo" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630031555')[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+Migrating to CreateEmpaques (20120630034317)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "empaques" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maprobada" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630034317')[0m
+  [1m[35m (13.0ms)[0m  commit transaction
+Migrating to CreateTinta (20120630034437)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateClientes (20120628040454)
+Migrating to CreateOts (20120630023558)
+Migrating to CreateEntregas (20120630025934)
+Migrating to CreateMobras (20120630031555)
+Migrating to CreateEmpaques (20120630034317)
+Migrating to CreateTinta (20120630034437)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "tinta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "densidad" decimal, "color1" varchar(255), "color2" varchar(255), "color3" varchar(255), "color4" varchar(255), "color5" varchar(255), "color6" varchar(255), "tinta" decimal, "polvoAntirrepinte" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630034437')[0m
+  [1m[35m (6.0ms)[0m  commit transaction
+Migrating to CreateBarnizs (20120630035159)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "barnizs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "barniz1" varchar(255), "barniz2" varchar(255), "cantidad" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630035159')[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+Migrating to CreateStampings (20120630035357)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "stampings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "stamping" varchar(255), "cantidad" decimal, "ancho" decimal, "alto" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630035357')[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+Migrating to CreateChapas (20120630035714)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "chapas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "nuevas" integer, "usadas" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630035714')[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+Migrating to CreateProductos (20120630040349)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombreProducto" varchar(255), "productoIntermedio" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630040349')[0m
+  [1m[35m (13.0ms)[0m  commit transaction
+Migrating to CreatePapels (20120630040648)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "papels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipoDePapel" varchar(255), "tamano" varchar(255), "gramaje" integer, "origen" varchar(255), "distribucion1" integer, "distribucion2" integer, "resmas" integer, "hojas" integer, "refile" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120630040648')[0m
+  [1m[35m (10.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("barnizs")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("chapas")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("clientes")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("empaques")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("entregas")[0m
+  [1m[35m (1.0ms)[0m  PRAGMA index_list("mobras")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("ots")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("papels")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("productos")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("stampings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("tinta")[0m
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (19.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "barnizs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "barniz1" varchar(255), "barniz2" varchar(255), "cantidad" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (10.0ms)[0m  [1mCREATE TABLE "chapas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "nuevas" integer, "usadas" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (13.0ms)[0m  CREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente" varchar(255), "porcentajeMaximo" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (10.0ms)[0m  [1mCREATE TABLE "empaques" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maprobada" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "entregas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cantidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "mobras" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "trabajo" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (12.0ms)[0m  CREATE TABLE "ots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "estado" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "papels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipoDePapel" varchar(255), "tamano" varchar(255), "gramaje" integer, "origen" varchar(255), "distribucion1" integer, "distribucion2" integer, "resmas" integer, "hojas" integer, "refile" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (11.0ms)[0m  CREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombreProducto" varchar(255), "productoIntermedio" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "stampings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "stamping" varchar(255), "cantidad" decimal, "ancho" decimal, "alto" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (9.0ms)[0m  CREATE TABLE "tinta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "densidad" decimal, "color1" varchar(255), "color2" varchar(255), "color3" varchar(255), "color4" varchar(255), "color5" varchar(255), "color6" varchar(255), "tinta" decimal, "polvoAntirrepinte" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (10.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630040648')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120628040454')
+  [1m[36m (14.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630023558')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630025934')
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630031555')[0m
+  [1m[35m (13.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630034317')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630034437')[0m
+  [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630035159')
+  [1m[36m (16.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630035357')[0m
+  [1m[35m (12.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630035714')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630040349')[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateClientes (20120628040454)
+Migrating to CreateOts (20120630023558)
+Migrating to CreateEntregas (20120630025934)
+Migrating to CreateMobras (20120630031555)
+Migrating to CreateEmpaques (20120630034317)
+Migrating to CreateTinta (20120630034437)
+Migrating to CreateBarnizs (20120630035159)
+Migrating to CreateStampings (20120630035357)
+Migrating to CreateChapas (20120630035714)
+Migrating to CreateProductos (20120630040349)
+Migrating to CreatePapels (20120630040648)
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("barnizs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("chapas")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("clientes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("empaques")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("entregas")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("mobras")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("ots")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("papels")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("productos")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("stampings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tinta")
+  [1m[36m (19.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "barnizs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "barniz1" varchar(255), "barniz2" varchar(255), "cantidad" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (7.0ms)[0m  [1mCREATE TABLE "chapas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "nuevas" integer, "usadas" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente" varchar(255), "porcentajeMaximo" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "empaques" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "maprobada" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "entregas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cantidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "mobras" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "trabajo" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "ots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "estado" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "papels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipoDePapel" varchar(255), "tamano" varchar(255), "gramaje" integer, "origen" varchar(255), "distribucion1" integer, "distribucion2" integer, "resmas" integer, "hojas" integer, "refile" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombreProducto" varchar(255), "productoIntermedio" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "stampings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "stamping" varchar(255), "cantidad" decimal, "ancho" decimal, "alto" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "tinta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "densidad" decimal, "color1" varchar(255), "color2" varchar(255), "color3" varchar(255), "color4" varchar(255), "color5" varchar(255), "color6" varchar(255), "tinta" decimal, "polvoAntirrepinte" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (15.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630040648')[0m
+  [1m[35m (8.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120628040454')
+  [1m[36m (8.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630023558')[0m
+  [1m[35m (7.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630025934')
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630031555')[0m
+  [1m[35m (13.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630034317')
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630034437')[0m
+  [1m[35m (14.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630035159')
+  [1m[36m (10.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630035357')[0m
+  [1m[35m (7.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120630035714')
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120630040349')[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateClientes (20120628040454)
+Migrating to CreateOts (20120630023558)
+Migrating to CreateEntregas (20120630025934)
+Migrating to CreateMobras (20120630031555)
+Migrating to CreateEmpaques (20120630034317)
+Migrating to CreateTinta (20120630034437)
+Migrating to CreateBarnizs (20120630035159)
+Migrating to CreateStampings (20120630035357)
+Migrating to CreateChapas (20120630035714)
+Migrating to CreateProductos (20120630040349)
+Migrating to CreatePapels (20120630040648)
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("barnizs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("chapas")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("clientes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("empaques")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("entregas")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("mobras")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("ots")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("papels")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("productos")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("stampings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tinta")
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (50.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (6.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateClientes (20120628040454)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cliente" varchar(255), "porcentajeMaximo" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120628040454')
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOts (20120630023558)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "ots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "estado" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630023558')
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEntregas (20120630025934)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "entregas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cantidad" integer, "trabajo" varchar(255), "fechaLanzamiento" date, "fechaEntrega" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630025934')
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMobras (20120630031555)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "mobras" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "trabajo" varchar(255), "fecha" date, "cantidad" integer, "centroDeTrabajo" varchar(255), "tarea" varchar(255), "comienzo" datetime, "fin" datetime, "cierreDeOperacion" varchar(255), "calificacion" integer, "pliegosConformes" decimal, "unidadesConformes" decimal, "unidadesDePrueba" integer, "unidadesAveriadas" integer, "recuperables" integer, "observaciones" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630031555')
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEmpaques (20120630034317)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "empaques" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "muestraAprobada" varchar(255), "pruebaDeFrote" varchar(255), "controlFinal" varchar(255), "operacion" varchar(255), "cantidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630034317')
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTinta (20120630034437)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "tinta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "densidad" decimal, "color1" varchar(255), "color2" varchar(255), "color3" varchar(255), "color4" varchar(255), "color5" varchar(255), "color6" varchar(255), "tinta" decimal, "polvoAntirrepinte" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630034437')
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateBarnizs (20120630035159)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "barnizs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "barniz1" varchar(255), "barniz2" varchar(255), "cantidad" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630035159')
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateStampings (20120630035357)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "stampings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "stamping" varchar(255), "cantidad" decimal, "ancho" decimal, "alto" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630035357')
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateChapas (20120630035714)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "chapas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "nuevas" integer, "usadas" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630035714')
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProductos (20120630040349)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombreProducto" varchar(255), "productoIntermedio" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630040349')
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePapels (20120630040648)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "papels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipoDePapel" varchar(255), "tamano" varchar(255), "gramaje" integer, "origen" varchar(255), "distribucion1" integer, "distribucion2" integer, "resmas" integer, "hojas" integer, "refile" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120630040648')
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("barnizs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("chapas")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("clientes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("empaques")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("entregas")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("mobras")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("ots")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("papels")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("productos")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("stampings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tinta")
+
+
+Started GET "/Litografia" for 127.0.0.1 at 2012-07-03 21:05:48 -0300
+
+ActionController::RoutingError (No route matches [GET] "/Litografia"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
