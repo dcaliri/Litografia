@@ -3,7 +3,8 @@ class CreateClientes < ActiveRecord::Migration
     create_table :clientes do |t|
       t.string :cliente
 	  t.integer :porcentajeMaximo
-      t.timestamps
+      
+	  t.timestamps
     end
   end
 end
