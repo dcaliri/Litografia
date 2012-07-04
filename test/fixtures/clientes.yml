@@ -2,6 +2,8 @@
 
 one:
   cliente: MyString
+  procentajeMaximo: 1
 
 two:
   cliente: MyString
+  procentajeMaximo: 1

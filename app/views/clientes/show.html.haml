@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Cliente:
+  = @cliente.cliente
+%p
+  %b Procentajemaximo:
+  = @cliente.procentajeMaximo
+
+= link_to 'Edit', edit_cliente_path(@cliente)
+\|
+= link_to 'Back', clientes_path
