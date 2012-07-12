@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Ot:
+  = @ot.ot
+%p
+  %b estado:
+  = @ot.estado
+
+= link_to 'Edit', edit_ot_path(@ot)
+\|
+= link_to 'Back', ots_path

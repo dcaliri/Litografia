@@ -1,0 +1,20 @@
+%h1 Listing ots
+
+%table
+  %tr
+    %th Estado
+    %th 
+    %th
+    %th
+
+  - @ots.each do |ot|
+    %tr
+      %td= ot.ot
+      %td= ot.estado
+      %td= link_to 'Show', ot
+      %td= link_to 'Edit', edit_ot_path(ot)
+      %td= link_to 'Destroy', ot, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Ot', new_ot_path
