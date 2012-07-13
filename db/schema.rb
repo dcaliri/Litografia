@@ -79,8 +79,19 @@ ActiveRecord::Schema.define(:version => 20120704022216) do
 
   create_table "ots", :force => true do |t|
     t.string   "estado"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "defectuosos"
+    t.integer  "cliente_id"
+    t.integer  "entrega_id"
+    t.integer  "mobra_id"
+    t.integer  "empaque_id"
+    t.integer  "tinta_id"
+    t.integer  "barniz_id"
+    t.integer  "stamping_id"
+    t.integer  "chapa_id"
+    t.integer  "papel_id"
+    t.integer  "producto_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "papels", :force => true do |t|

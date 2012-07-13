@@ -7,10 +7,14 @@
           %li= msg
 
   .field
-    = f.label :ot
-    = f.text_field :ot
-  .field
     = f.label :estado
-    = f.text_field :estado
+    = f.select :estado, Ot::ESTADOS
+  .field
+    = f.label :defectuosos
+    = f.text_field :defectuosos
+  .field
+    = f.fields_for :tinta do |tinta|
+      = tinta.label :color1
+      = tinta.text_field :color1
   .actions
-    = f.submit 'Save'
+    = f.submit 'Guardar'

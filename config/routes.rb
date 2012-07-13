@@ -1,5 +1,11 @@
 Litografia::Application.routes.draw do
+
+  resources :ots
   resources :clientes
+  resources :tintas
+
+  root to: "ots#new"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

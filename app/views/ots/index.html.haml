@@ -3,14 +3,15 @@
 %table
   %tr
     %th Estado
+    %th Defectuosos 
     %th 
     %th
     %th
 
   - @ots.each do |ot|
     %tr
-      %td= ot.ot
       %td= ot.estado
+      %td= ot.defectuosos
       %td= link_to 'Show', ot
       %td= link_to 'Edit', edit_ot_path(ot)
       %td= link_to 'Destroy', ot, :confirm => 'Are you sure?', :method => :delete

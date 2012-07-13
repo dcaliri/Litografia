@@ -1,11 +1,19 @@
 %p#notice= notice
 
 %p
-  %b Ot:
-  = @ot.ot
-%p
-  %b estado:
+  %b Estado:
   = @ot.estado
+%p
+  %b Defectuosos:
+  = @ot.defectuosos
+%br
+%h2 Tinta
+= @tinta.color1
+%br
+%br
+%br
+%br
+%br
 
 = link_to 'Edit', edit_ot_path(@ot)
 \|
